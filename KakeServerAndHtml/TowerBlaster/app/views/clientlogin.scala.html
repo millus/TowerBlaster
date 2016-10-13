@@ -1,0 +1,51 @@
+@(name: String, currScore: String, highScore: String)
+
+@main("Tilgangsstyring") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+<script type='text/javascript' src='@routes.Assets.at("javascripts/loginsuccess.js")'></script>
+<link rel="stylesheet" href='@routes.Assets.at("css/styles.css")'>
+<script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js'></script>
+
+
+
+
+<div class="content">
+    <article class="info-login" id="logedin">
+        Logget inn som:
+        <span id="nick">@name</span>
+        <span>Highscore:9999</span>
+        <a href="@routes.Application.index()" type="submit" >Logg ut</a>
+    </article>
+
+    <div id="note">
+        Lagring OK.
+    </div>
+
+    <div class="adresse-velger" onclick='hideThis()'>
+        <h1> Aktive spill </h1>
+        <p >
+            <span id="ongoing-games"> </span>
+
+            <form method="POST" action="@routes.Application.joinGame()">
+                <input type="text" name="respA" id="sessionId"/>
+                <input type="text" name="respC" id="nickjoin" \>
+                <button class="buttonGreen">Spill</button>
+            </form>
+        </p>
+
+    </div>
+
+    <div class="adresse-velger" onclick='hideThis()'>
+        <h1> Inviter etter nickname: </h1>
+        <p> <input type="text" name="nickname"/><span><button class="buttonGreen">Inviter</button></span></p>
+
+    </div>
+
+    <div class="adresse-velger" onclick='hideThis()'>
+        <h1> Invitasjoner: </h1>
+        <p> - Kake <span><button class="buttonGreen">Spill</button></span></p>
+
+    </div>
+
+</div>
+}

@@ -1,0 +1,42 @@
+@(loginerror: String)
+
+@main("Tilgangsstyring") {
+
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+    <link rel="stylesheet" href='@routes.Assets.at("css/styles.css")'>
+
+    <div class="content">
+
+        <form method="POST" action="@routes.Application.webLogin()">
+            <div id="test-velger">
+                <p>Skriv inn din email og passord for &#229; logge inn.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <article>Nickname:</article>
+                        </td>
+                        <td>
+                            <article>Password:</article>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="nickname"/>
+                        </td>
+                        <td>
+                            <input type="text" name="password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="buttonGreen">Logg inn</button>
+                        </td>
+                    </tr>
+                </table>
+                <p>@loginerror</p>
+            </div>
+        </form>
+        <br>
+    </div>
+
+}

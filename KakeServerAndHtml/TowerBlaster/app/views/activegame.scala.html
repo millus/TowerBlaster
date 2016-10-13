@@ -1,0 +1,42 @@
+@(name: String, currScore: String, highScore: String, sessionId: String)
+
+@main("Tilgangsstyring") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+<script type='text/javascript' src='@routes.Assets.at("javascripts/activegame.js")'></script>
+<link rel="stylesheet" href='@routes.Assets.at("css/styles.css")'>
+<script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js'></script>
+
+
+
+
+<div class="content">
+    <article class="info-login" id="logedin">
+        Logget inn som:
+        <span id="nick">@name</span>
+        <span>Current score:@currScore</span>
+        <span>Highscore:@highScore</span>
+        <a href="@routes.Application.index()" type="submit" >Logg ut</a>
+        <span id="gameId">@sessionId</span>
+    </article>
+
+
+    <div class="adresse-velger" onclick='hideThis()'>
+        <h1> Player 1 </h1>
+
+        <p >
+            <span id="numbers1"></span>
+
+        </p>
+    </div>
+    <div class="adresse-velger" onclick='hideThis()'>
+        <h1> Player 2 </h1>
+
+        <p >
+            <span id="numbers2"></span>
+
+        </p>
+    </div>
+
+
+</div>
+}
