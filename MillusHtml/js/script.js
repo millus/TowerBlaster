@@ -1,10 +1,17 @@
-var boxElements = document.getElementsByClassName("boxes");
-
+(function(){
+	var boxElements = document.getElementsByClassName("boxes");
+console.log('yoolo');
+	initBoxSizes();
     function initBoxSizes(){
+		console.log('yool1');
         var numOfBoxElements = boxElements.length;
+		console.log('yoolo12');
         for (var i = 0; i <= numOfBoxElements; i += 1) {
+			console.log('yoolo3');
             var value = (document.getElementsByClassName("boxes")[i].innerHTML);
+			console.log('yoolo4');
             setSize(i, value);
+			console.log('yoolo5');
             setListenersOnButton(i);
         }
     }
@@ -28,24 +35,7 @@ var boxElements = document.getElementsByClassName("boxes");
             document.getElementById(boxClicked).innerHTML = visible_choice;
             document.getElementById('visible-choice').innerHTML = temp;
 
-            var updateurl = "/updatetable";
-            $.ajax({
-                 type: 'POST',
-                 url: updateurl,
-                 data: JSON.stringify({
-                   "respA" : temp,
-                   "respB" : visible_choice,
-                   "respC" :  $('#gameId').text(),
-                 }),
-                 error: function(e) {
-                   console.log(e);
-                 },
-                 dataType: "json",
-                 contentType: "application/json",success: function(data) {
-
-                 }
-                });
-
 
         };
     }
+})();
