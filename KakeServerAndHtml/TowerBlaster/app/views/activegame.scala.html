@@ -3,7 +3,7 @@
 @main("Tilgangsstyring") {
 <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
 <script type='text/javascript' src='@routes.Assets.at("javascripts/activegame.js")'></script>
-<link rel="stylesheet" href='@routes.Assets.at("css/styles.css")'>
+<link rel="stylesheet" href='@routes.Assets.at("css/styles2.css")'>
 <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js'></script>
 
 
@@ -25,10 +25,26 @@
 
         <p >
             <span id="numbers1"></span>
-
         </p>
+        <div style="text-align: center;">
+            <div class="boxes" id="box1" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box2" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box3" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box4" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box5" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box6" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box7" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box8" style="width: 500px; margin: 0 auto;"></div>
+            <div class="boxes" id="box9" style="width: 500px; margin: 0 auto;"></div>
+        </div>
+        <div class="choose-area">
+            <div class="selectedboxes" id="visible-choice">9</div>
+            <div id="secret-choice"></div>
+        </div>
     </div>
-    <div class="adresse-velger" onclick='hideThis()'>
+
+    </div>
+    <div class="adresse-velger">
         <h1> Player 2 </h1>
 
         <p >

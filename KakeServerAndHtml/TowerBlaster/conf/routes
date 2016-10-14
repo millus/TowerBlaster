@@ -9,6 +9,9 @@ GET     /                           controllers.Application.index()
 POST    /weblogin                   controllers.Application.webLogin()
 POST    /joingame                   controllers.Application.joinGame()
 POST    /joinedgame                 controllers.Application.joinedGame()
+POST    /updatetable                controllers.Application.updateTable()
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

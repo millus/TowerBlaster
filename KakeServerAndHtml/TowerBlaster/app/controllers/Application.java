@@ -55,12 +55,74 @@ public class Application extends Controller {
         System.out.println("Fra form " + a1.respC);
 
         for(Activegame a : a2){
+            /*
+            ArrayList<Integer> test= new ArrayList<Integer>();
+            test.add(8);
+            test.add(4);
+            test.add(6);
+            test.add(10);
+            test.add(1);
+            test.add(5);
+            test.add(3);
+            test.add(2);
+            test.add(7);
+            test.add(9);
+
+            a.p1list = test;
+            a.save();*/
             System.out.println("Fra tabell " + a.sessionId);
             System.out.println("Fra form2 " +a1.respC);
             if(a1.respC.equals(a.sessionId)){
                 return ok(toJson(a));
             }
         }
+        return ok();
+    }
+
+    @Transactional
+    public Result updateTable() {
+        List<Activegame> a2 = Activegame.find.all();
+        Business a1 = Form.form(Business.class).bindFromRequest().get();
+        System.out.println("Fra form1 " + a1.respA);
+        System.out.println("Fra form1 " + a1.respB);
+        System.out.println("Fra form1 " + a1.respC);
+
+       for(Activegame a : a2){
+           if(a.sessionId.equals(a1.respC)){
+               ArrayList<Integer> edit = a.p1list;
+               int inTable = Integer.parseInt(a1.respA);
+               int indexTable = edit.indexOf(inTable);
+
+               int inSelected = Integer.parseInt(a1.respB);
+               int indexSelected = edit.indexOf(inSelected);
+
+               edit.set(indexSelected,inTable);
+               edit.set(indexTable,inSelected);
+
+
+           }
+
+       }
+            /*
+            ArrayList<Integer> test= new ArrayList<Integer>();
+            test.add(8);
+            test.add(4);
+            test.add(6);
+            test.add(10);
+            test.add(1);
+            test.add(5);
+            test.add(3);
+            test.add(2);
+            test.add(7);
+            test.add(9);
+
+            a.p1list = test;
+            a.save();*/
+
+          //  if(a1.respC.equals(a.sessionId)){
+
+
+      //  }
         return ok();
     }
 
