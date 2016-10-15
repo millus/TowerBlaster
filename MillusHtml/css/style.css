@@ -13,28 +13,38 @@ html, body{
     padding-right: 40px;
     background-image: url("../images/cartoonwoods.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     padding-top:150px;
 }
 
 #player1{
   float:left;
   width:300px;
+  border-top: 20px solid #673b0f;
+  border-left: 20px solid #673b0f;
+  padding-top: 20px;
 }
 
 #player2{
   float:right;
   width: 300px;
+  padding-top: 20px;
 }
 
-/*#cover{
+#cover{
   opacity: 1;
   position:absolute;
   z-index: 99999;
-  width: 200px;
+  width: 30px;
   height:700px;
+  background-image: url("../images/curtain.jpg");
+  background-size: cover;
   background-color: grey;
-}*/
+  background-blend-mode:luminosity;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 .boxes{
   border: 4px solid #c56d15;
   background-color: red;
@@ -81,14 +91,12 @@ html, body{
   margin-left: 10%;
 }
 
-
 #secret-choice{
  float:right;
  background-color: green;
  border: 4px solid #c56d15;
  margin-right: 10%;
 }
-
 
 .selectedboxes{
   background-image: url("../images/redbrick.jpg");

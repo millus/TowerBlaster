@@ -1,6 +1,11 @@
 (function(){
 	var boxElements = document.getElementsByClassName("boxes");
-	initBoxSizes();
+
+  setTimeout(function(){
+    hideOpponent('cover');
+  }, 5000);
+
+  initBoxSizes();
 
     function initBoxSizes(){
         var numOfBoxElements = boxElements.length;
@@ -32,8 +37,26 @@
         };
     }
 
-    /*setTimeout(function () {
-        document.getElementById('cover').style.opacity = 0;
-    }, 5000);*/
+
+    function hideOpponent (idObj) {
+      document.getElementById(idObj).style.opacity = 1;
+      animateWidth(idObj);
+    };
+
+
+    function animateWidth(idObj){
+      var elem = document.getElementById(idObj);
+      var maxWidth = 280;
+      var curWidth = 30;
+      var id = setInterval(frame, 10);
+      function frame(){
+      if(curWidth === maxWidth){
+        clearInterval(id);
+      } else {
+        curWidth++;
+        elem.style.width = curWidth + 'px';
+      }
+    }
+   };
 
 })();
