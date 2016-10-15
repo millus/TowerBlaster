@@ -1,5 +1,5 @@
 # TowerBlaster
-Fritidsprosjekt
+![Screenshot day 3](Screenshots/day3.png)
 
 ## What is Tower Blaster?
 A game where the goal is to sort your blocks faster than your opponent. 
