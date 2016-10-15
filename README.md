@@ -1,15 +1,16 @@
 # TowerBlaster
-![Screenshot day 3](Screenshots/day3.png)
 
 ## What is Tower Blaster?
 A game where the goal is to sort your blocks faster than your opponent. 
 The tower is finished sorted when all of the blocks are in ascending order, with the largest block at the bottom and the smallest on top.
 
+![Screenshot day 3](Screenshots/day3.png)
+
 ## Why do we make it?
 We wanted to have a multiplayer version of Tower Blaster, so we could play against eachother instead of the AI. :robot_face:
 Aand we also love working and learning together, its our fun-time to use our creativity and skills on home projects.
 
-## How do we work?
+## Who are we?
 
 ### Kake is the CEO - Chief Engineer Officer
   * his focus area is development, making all the important logic
