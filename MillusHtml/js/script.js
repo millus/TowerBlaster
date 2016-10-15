@@ -1,24 +1,19 @@
 (function(){
 	var boxElements = document.getElementsByClassName("boxes");
-console.log('yoolo');
 	initBoxSizes();
+
     function initBoxSizes(){
-		console.log('yool1');
         var numOfBoxElements = boxElements.length;
-		console.log('yoolo12');
         for (var i = 0; i <= numOfBoxElements; i += 1) {
-			console.log('yoolo3');
             var value = (document.getElementsByClassName("boxes")[i].innerHTML);
-			console.log('yoolo4');
             setSize(i, value);
-			console.log('yoolo5');
             setListenersOnButton(i);
         }
     }
 
     function setSize(idOfBox, valueOfBox){
         var newValue = 0;
-        newValue = (parseInt(valueOfBox)* 10) + 50;
+        newValue = (parseInt(valueOfBox)* 3) + 50;
         document.getElementsByClassName("boxes")[idOfBox].style.width = newValue + 'px';
     }
 
@@ -34,8 +29,11 @@ console.log('yoolo');
             var temp = document.getElementById(boxClicked).innerHTML;
             document.getElementById(boxClicked).innerHTML = visible_choice;
             document.getElementById('visible-choice').innerHTML = temp;
-
-
         };
     }
+
+    /*setTimeout(function () {
+        document.getElementById('cover').style.opacity = 0;
+    }, 5000);*/
+
 })();

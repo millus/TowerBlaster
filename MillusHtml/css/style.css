@@ -1,8 +1,10 @@
 html, body{
   height: 100%;
+  margin:0;
 }
 
 #content{
+    position: relative;
     width:90%;
     height:100%;
     margin:auto;
@@ -12,8 +14,27 @@ html, body{
     background-image: url("../images/cartoonwoods.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top:150px;
 }
 
+#player1{
+  float:left;
+  width:300px;
+}
+
+#player2{
+  float:right;
+  width: 300px;
+}
+
+/*#cover{
+  opacity: 1;
+  position:absolute;
+  z-index: 99999;
+  width: 200px;
+  height:700px;
+  background-color: grey;
+}*/
 .boxes{
   border: 4px solid #c56d15;
   background-color: red;
@@ -28,29 +49,57 @@ html, body{
   font-size: 35px;
   font-weight: bolder;
   color: white;
+  margin:auto;
 }
 
-.selectedboxes{
-  border: 4px solid #c56d15;
+#choose-area{
+  background-color: #ffc966;
+  border: 3px solid #673b0f;
+  width:auto;
+  max-width:300px;
+  height:auto;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  margin:auto;
+  margin-top:20%;
+  padding:30px;
+  text-align: center;
+}
+
+#choose-area h2{
+  font-family: Helvetica;
+  color: #673b0f;
+  padding-bottom: 20px;
+}
+
+#visible-choice{
+  float:left;
   background-color: red;
+  border: 4px solid #c56d15;
+  margin-left: 10%;
+}
+
+
+#secret-choice{
+ float:right;
+ background-color: green;
+ border: 4px solid #c56d15;
+ margin-right: 10%;
+}
+
+
+.selectedboxes{
   background-image: url("../images/redbrick.jpg");
   background-blend-mode:multiply;
   background-size:100px;
-  width: 50px;
-  height: 50px;
-  display:block;
-  padding:5px;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
   text-align: center;
-  font-size: 35px;
+  font-size: 50px;
   font-weight: bolder;
   color: white;
-}
-
-.choose-area{
-  background-color: #ffc966;
-  border: 3px solid #c56d15;
-  width:300px;
-  height:100px;
-  margin:auto;
-  padding:50px;
 }
