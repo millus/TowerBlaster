@@ -26,6 +26,7 @@ public class Activegame extends Model{
     public ArrayList<Integer> p2list;
     public ArrayList<Integer> gamelist;
 
+    public boolean player1turn;
 
     public static Finder<Long, Activegame> find = new Finder<Long, Activegame>(
             Long.class, Activegame.class);

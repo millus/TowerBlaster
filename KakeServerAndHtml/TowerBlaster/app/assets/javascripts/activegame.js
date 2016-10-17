@@ -13,17 +13,29 @@ $(document).ready(function(){
      contentType: "application/json",success: function(data) {
 
          if(data.sessionId){
-           $('#box1').text(data.p1list[0]);
-           $('#box2').text(data.p1list[1]);
-           $('#box3').text(data.p1list[2]);
-           $('#box4').text(data.p1list[3]);
-           $('#box5').text(data.p1list[4]);
-           $('#box6').text(data.p1list[5]);
-           $('#box7').text(data.p1list[6]);
-           $('#box8').text(data.p1list[7]);
-           $('#box9').text(data.p1list[8]);
-           $('#visible-choice').text(data.p1list[9]);
-           $('#numbers2').text(data.p2list[0] + "," + data.p2list[1] + "," + data.p2list[2]);
+           $('#p1box1').text(data.p1list[0]);
+           $('#p1box2').text(data.p1list[1]);
+           $('#p1box3').text(data.p1list[2]);
+           $('#p1box4').text(data.p1list[3]);
+           $('#p1box5').text(data.p1list[4]);
+           $('#p1box6').text(data.p1list[5]);
+           $('#p1box7').text(data.p1list[6]);
+           $('#p1box8').text(data.p1list[7]);
+           $('#p1box9').text(data.p1list[8]);
+           $('#p1box10').text(data.p1list[9]);
+           $('#visible-choice').text(data.gamelist[0]);
+
+           $('#p2box1').text(data.p2list[0]);
+           $('#p2box2').text(data.p2list[1]);
+           $('#p2box3').text(data.p2list[2]);
+           $('#p2box4').text(data.p2list[3]);
+           $('#p2box5').text(data.p2list[4]);
+           $('#p2box6').text(data.p2list[5]);
+           $('#p2box7').text(data.p2list[6]);
+           $('#p2box8').text(data.p2list[7]);
+           $('#p2box9').text(data.p2list[8]);
+           $('#p2box10').text(data.p2list[9]);
+
             initBoxSizes();
          }
      }
@@ -43,7 +55,7 @@ $(document).ready(function(){
 
     function setSize(idOfBox, valueOfBox){
         var newValue = 0;
-        newValue = (parseInt(valueOfBox)* 10) + 50;
+        newValue = (parseInt(valueOfBox)* 3) + 50;
         document.getElementsByClassName("boxes")[idOfBox].style.width = newValue + 'px';
     }
 

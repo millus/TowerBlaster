@@ -10,6 +10,7 @@ import models.Person;
 import play.data.Form;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -35,16 +36,33 @@ public class Application extends Controller {
         return ok(index.render(""));
     }
 
-    @Transactional
-    public Result loginSuccess() {
-        return ok(clientlogin.render("","",""));
-    }
 
     @Transactional
     public Result joinGame() {
         Business a1 = Form.form(Business.class).bindFromRequest().get();
         System.out.println("From form: " + a1.respA + "test" + a1.respC);
         Person p = Person.find.query().eq("nickname", a1.respC).findUnique();
+
+
+        /*
+        //NEW GAME
+        Activegame activegames = Activegame.find.query().eq("sessionId", a1.respA).findUnique();
+
+        ArrayList<Integer> allnumbers = new ArrayList<Integer>();
+        for(int i = 1; i < 51; i++){
+            allnumbers.add(i);
+        }
+        Collections.shuffle(allnumbers);
+        activegames.p1list = new ArrayList<Integer>(allnumbers.subList(0,10));
+        activegames.p2list =  new ArrayList<Integer>(allnumbers.subList(10,20));
+        activegames.gamelist  =  new ArrayList<Integer>(allnumbers.subList(20,allnumbers.size()));
+
+        System.out.println("Size of lists: " + activegames.p1list.size());
+        */
+
+
+
+
         return ok(activegame.render(p.nickname,p.currentScore,p.highScore,p.sessionId));
     }
 
@@ -86,6 +104,7 @@ public class Application extends Controller {
         System.out.println("Fra form1 " + a1.respA);
         System.out.println("Fra form1 " + a1.respB);
         System.out.println("Fra form1 " + a1.respC);
+        //System.out.println("Fra form1 " + a1.respD);
 
        for(Activegame a : a2){
            if(a.sessionId.equals(a1.respC)){
@@ -99,10 +118,15 @@ public class Application extends Controller {
                edit.set(indexSelected,inTable);
                edit.set(indexTable,inSelected);
 
+               a.player1turn = !a.player1turn;
+
 
            }
 
        }
+
+        //Trenger begge listene fra camilla for å kunne sette true/false.
+
             /*
             ArrayList<Integer> test= new ArrayList<Integer>();
             test.add(8);
@@ -147,30 +171,9 @@ public class Application extends Controller {
     public Result webLogin() {
         Person person = Form.form(Person.class).bindFromRequest().get();
         Person authenticatedPerson = security.webLogin(person);
-/*
-        ArrayList<Integer> test = new ArrayList<Integer>();
-        test.add(1);
-        test.add(2);
-        test.add(3);
 
 
-        Activegame ag = new Activegame();
-        ag.gamelist = test;
-        ag.p1list = test;
-        ag.p2list = test;
-        ag.player1 = "Kake";
-        ag.player2 = "Millus";
-        ag.sessionId = "123";
-        ag.save();
-*/
         if(authenticatedPerson != null) {
-            /*
-            List<Activegame> a2 = Activegame.find.all();
-
-            for(Activegame a : a2){
-                System.out.println(a.gamelist.get(1));
-            }
-            */
 
             return ok(clientlogin.render(authenticatedPerson.nickname, authenticatedPerson.currentScore,authenticatedPerson.highScore));
 
