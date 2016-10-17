@@ -21,11 +21,29 @@ html, body{
 #player1{
   float:left;
   width:300px;
+  border-top: 20px solid #673b0f;
+  border-left: 20px solid #673b0f;
+  padding-top: 20px;
 }
 
 #player2{
   float:right;
   width: 300px;
+  padding-top: 20px;
+}
+
+#cover{
+  opacity: 1;
+  position:absolute;
+  z-index: 99999;
+  width: 30px;
+  height:700px;
+  background-image: url("/assets/grafikk/curtain.jpg");
+  background-size: cover;
+  background-color: grey;
+  background-blend-mode:luminosity;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 

@@ -44,6 +44,11 @@ $(document).ready(function(){
 
     var boxElements = document.getElementsByClassName("boxes");
 
+    setTimeout(function(){
+      hideOpponent('cover');
+    }, 5000);
+
+
     function initBoxSizes(){
         var numOfBoxElements = boxElements.length;
         for (var i = 0; i <= numOfBoxElements; i += 1) {
@@ -93,5 +98,25 @@ $(document).ready(function(){
 
         };
     }
-});
 
+    function hideOpponent (idObj) {
+      document.getElementById(idObj).style.opacity = 1;
+      animateWidth(idObj);
+    }
+
+
+    function animateWidth(idObj){
+      var elem = document.getElementById(idObj);
+      var maxWidth = 280;
+      var curWidth = 30;
+      var id = setInterval(frame, 10);
+      function frame(){
+      if(curWidth === maxWidth){
+        clearInterval(id);
+      } else {
+        curWidth++;
+        elem.style.width = curWidth + 'px';
+      }
+    }
+   }
+});
